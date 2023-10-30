@@ -12,7 +12,6 @@
 #SBATCH -e pipe-slurm.%N.%j.err # STDERR
 
 # LOAD MODULES, INSERT CODE, AND RUN YOUR PROGRAMS HERE
-<<<<<<< HEAD
 python -u -c "import PyHipp as pyh; \
 import DataProcessingTools as DPT; \
 import os; \
