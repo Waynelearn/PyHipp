@@ -32,6 +32,7 @@ most_recent=${all_snaps[$total_count-1]}
 
 if [ "$total_count" -ge "$(($keep+1))" ]
 then
+	# array slicing from all_snaps
 	remove_snaps=(${all_snaps[@]:0:(($total_count-$keep))})
 	for snap in ${remove_snaps[@]}
 	do
