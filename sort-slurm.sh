@@ -6,11 +6,11 @@
 #SBATCH --ntasks=1   # number of processor cores (i.e. tasks)
 #SBATCH --nodes=1   # number of nodes
 #SBATCH --cpus-per-task=1 # number of CPUs for this task //added by wyn
-#SBATCH -J "rplhighpass-sort"   # job name
+#SBATCH -J "sort"   # job name
 
 ## /SBATCH -p general # partition (queue)
-#SBATCH -o rplhighpass-sort-slurm.%N.%j.out # STDOUT
-#SBATCH -e rplhighpass-sort-slurm.%N.%j.err # STDERR
+#SBATCH -o sort-slurm.%N.%j.out # STDOUT
+#SBATCH -e sort-slurm.%N.%j.err # STDERR
 
 /data/miniconda3/bin/conda init
 source ~/.bashrc
@@ -20,7 +20,7 @@ conda activate $envarg
 # LOAD MODULES, INSERT CODE, AND RUN YOUR PROGRAMS HERE
 python -u -c "import PyHipp as pyh; \
 import time; \
-pyh.RPLHighPass(saveLevel=1); \
+#pyh.RPLHighPass(saveLevel=1); \
 from PyHipp import mountain_batch; \
 mountain_batch.mountain_batch(); \
 from PyHipp import export_mountain_cells; \
